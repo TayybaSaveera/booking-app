@@ -12,8 +12,8 @@ function Login() {
   async function loginUser(ev) {
     ev.preventDefault();
     try {
-      const userInfo = await axios.post("/Login", { email, password });
-      setUser(userInfo);
+      const { data } = await axios.post("/Login", { email, password });
+      setUser(data);
       alert("login succcessful");
       setRedirect(true);
     } catch (error) {

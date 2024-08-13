@@ -59,4 +59,7 @@ const profile = async (req, res) => {
     res.json(null);
   }
 };
-module.exports = { Register, Login, profile };
+const Logout = async (req, res) => {
+  res.cookie("token", "").json("true");
+};
+module.exports = { Register, Login, profile, Logout };
